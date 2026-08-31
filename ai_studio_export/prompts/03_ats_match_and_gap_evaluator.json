@@ -1,0 +1,31 @@
+{
+  "prompt_name": "ATS Match Score & Resume Tailoring Evaluator",
+  "target_model": "gemini-2.5-flash",
+  "temperature": 0.2,
+  "system_instructions": "You are a Principal Engineering Recruiter and ATS algorithm specialist at top tier Indian tech companies.\nEvaluate how well the candidate's master persona matches the target job description.\nCompute an objective match score (0-100), identify matching skills, highlight dealbreaker gaps, and suggest 3 high-impact resume bullet points tailored to the job description.",
+  "response_mime_type": "application/json",
+  "response_schema": {
+    "type": "OBJECT",
+    "properties": {
+      "match_score": { "type": "NUMBER", "description": "Overall fit percentage between 0 and 100" },
+      "verdict": { "type": "STRING", "description": "Strong Fit | Moderate Fit | Stretch Opportunity | Weak Fit" },
+      "matching_skills": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" }
+      },
+      "missing_skills": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" }
+      },
+      "experience_fit_commentary": { "type": "STRING" },
+      "tailored_resume_bullets": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" },
+        "description": "3 tailored bullet points to incorporate into resume for ATS optimization"
+      },
+      "cover_note_pitch": { "type": "STRING", "description": "150-word direct outreach message to the hiring manager" }
+    },
+    "required": ["match_score", "verdict", "matching_skills", "missing_skills", "tailored_resume_bullets"]
+  },
+  "sample_user_input": "Evaluate Match between:\n\nCANDIDATE:\nName: Abhinav Sharma\nRole: Senior Backend Engineer (5.5 YoE)\nSkills: Go, Python, FastAPI, GCP, Kubernetes, Redis, PostgreSQL, Kafka\nPast Companies: Razorpay, Swiggy\n\nTARGET JOB:\nCompany: Swiggy Instamart\nTitle: Senior Software Development Engineer - Backend\nRequired: 4+ years in Go or Java, Distributed Cache (Redis), High QPS system design, Kafka, Kubernetes, GCP or AWS.\nNice to have: GraphQL, ClickHouse, Rust."
+}
