@@ -1,0 +1,17 @@
+[
+  {
+    "candidate_id": "cand_01",
+    "persona": "Senior Backend Engineer (Fintech & High QPS)",
+    "resume_text": "Abhinav Sharma\nBengaluru, India | abhinav.dev@gmail.com | +91 98765 43210 | linkedin.com/in/abhinavsharma-dev\n\nPROFESSIONAL SUMMARY\nSenior Backend Engineer with 5.5 years of experience building high-throughput microservices in Go, Python (FastAPI), and Distributed Systems. Experience at high-growth Indian fintech unicorn processing 20M+ daily transactions on GCP.\n\nEXPERIENCE\nSenior Software Engineer — Razorpay, Bengaluru (June 2022 – Present)\n- Architected idempotency and webhook delivery engine in Go & Redis handling 15,000 RPS at p99 < 25ms.\n- Migrated monolith payment ledger to event-driven Kafka microservices on Google Kubernetes Engine (GKE).\n- Mentored 4 junior engineers on distributed tracing with OpenTelemetry and Jaeger.\n\nSoftware Engineer — Swiggy, Bengaluru (July 2019 – May 2022)\n- Designed real-time delivery rider dispatching service in Python FastAPI, PostgreSQL, and Redis.\n- Reduced database connection pool bottlenecks by 40% through async connection multiplexing.\n\nSKILLS\nLanguages: Go (Golang), Python, SQL\nFrameworks: FastAPI, Gin, gRPC, Celery\nCloud & DevOps: GCP (Cloud Run, GKE, PubSub), Kubernetes, Docker, Terraform, Kafka\nDatabases: PostgreSQL, Redis, MongoDB, ClickHouse\n\nEDUCATION\nB.Tech in Computer Science — BITS Pilani (2015 – 2019) | CGPA: 8.7/10"
+  },
+  {
+    "candidate_id": "cand_02",
+    "persona": "Fullstack Product Engineer (React + Node.js)",
+    "resume_text": "Priya Venkatesh\nBengaluru, Karnataka | priya.v@gmail.com | +91 91234 56789 | github.com/priyav-dev\n\nSUMMARY\nFullstack Engineer with 3.5 years experience building performant web apps in React, Next.js, TypeScript, and Node.js. Passionate about design systems, web performance (CWV), and micro-frontends.\n\nEXPERIENCE\nSoftware Engineer — CRED, Bengaluru (2022 – Present)\n- Built interactive member rewards surface using Next.js 14, Tailwind CSS, and Framer Motion.\n- Optimized Largest Contentful Paint (LCP) from 3.2s to 1.1s across mobile web.\n\nAssociate Software Engineer — Zepto, Mumbai (2021 – 2022)\n- Created real-time order tracking dashboard in React & Socket.io for last-mile delivery teams.\n\nSKILLS\nFrontend: React, Next.js, TypeScript, Tailwind CSS, Redux Toolkit, Webpack\nBackend: Node.js, Express, PostgreSQL, Redis, REST APIs\nTools: Git, Jest, Cypress, Vercel, Docker\n\nEDUCATION\nB.E. in Information Science — RV College of Engineering, Bengaluru (2017 – 2021)"
+  },
+  {
+    "candidate_id": "cand_03",
+    "persona": "Cloud & DevOps Infrastructure Specialist",
+    "resume_text": "Rohan Deshmukh\nPune, Maharashtra | rohan.devops@outlook.com | +91 98230 11223\n\nSUMMARY\nDevOps & Cloud Platform Engineer with 4 years specializing in Kubernetes, Terraform, AWS/GCP, and GitOps CI/CD pipelines.\n\nEXPERIENCE\nPlatform Engineer — BrowserStack, Mumbai (2022 – Present)\n- Automated multi-region Kubernetes cluster deployment via Terraform and ArgoCD.\n- Lowered cloud compute costs by 32% via spot instance orchestration and Karpenter.\n\nSKILLS\nKubernetes, Docker, Terraform, Helm, Prometheus, Grafana, AWS (EKS, EC2, S3), GCP, GitHub Actions, Python scripting."
+  }
+]
