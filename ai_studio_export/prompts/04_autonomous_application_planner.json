@@ -1,0 +1,40 @@
+{
+  "prompt_name": "Autonomous Browser Form Application Planner",
+  "target_model": "gemini-2.5-flash",
+  "temperature": 0.1,
+  "system_instructions": "You are an autonomous browser agent task planner for job application portals (Greenhouse, Lever, Workday, Naukri FastApply).\nGiven candidate metadata and portal HTML or field names, map each form field to the candidate's exact profile details, format numbers correctly (e.g. converting CTC to standard form inputs, notice period to days), and plan sequential browser actions.\nCrucially: ALWAYS halt before clicking final submit to permit human-in-the-loop review.",
+  "response_mime_type": "application/json",
+  "response_schema": {
+    "type": "OBJECT",
+    "properties": {
+      "detected_ats_platform": { "type": "STRING", "description": "Greenhouse | Lever | Workday | Direct Portal | Unknown" },
+      "fields_to_autofill": {
+        "type": "ARRAY",
+        "items": {
+          "type": "OBJECT",
+          "properties": {
+            "field_label": { "type": "STRING" },
+            "input_value": { "type": "STRING" },
+            "field_type": { "type": "STRING", "description": "text | email | tel | number | select | file_upload" }
+          },
+          "required": ["field_label", "input_value", "field_type"]
+        }
+      },
+      "custom_questions_detected": {
+        "type": "ARRAY",
+        "items": {
+          "type": "OBJECT",
+          "properties": {
+            "question_text": { "type": "STRING" },
+            "proposed_answer": { "type": "STRING" },
+            "needs_user_confirmation": { "type": "BOOLEAN" }
+          },
+          "required": ["question_text", "proposed_answer", "needs_user_confirmation"]
+        }
+      },
+      "execution_plan_summary": { "type": "STRING" }
+    },
+    "required": ["detected_ats_platform", "fields_to_autofill", "execution_plan_summary"]
+  },
+  "sample_user_input": "Map candidate data to portal form fields:\n\nCandidate Data:\nName: Priya Venkatesh\nEmail: priya.v@gmail.com\nPhone: +91 91234 56789\nLocation: Bengaluru\nCurrent Role: Fullstack Engineer (3 YoE)\nCurrent CTC: 14 LPA\nExpected CTC: 22 LPA\nNotice Period: 30 Days\nLinkedIn: linkedin.com/in/priyavenkatesh\nGitHub: github.com/priyav-dev\n\nDetected Portal Inputs:\n1. 'First Name' [text input]\n2. 'Last Name' [text input]\n3. 'Email' [email input]\n4. 'Phone' [tel input]\n5. 'Resume/CV' [file input]\n6. 'Current Annual CTC (INR)' [number input]\n7. 'Expected Annual CTC (INR)' [number input]\n8. 'Official Notice Period' [select: Immediate / 15 days / 30 days / 60 days / 90 days]\n9. 'Are you authorized to work in India without sponsorship?' [radio: Yes / No]"
+}
