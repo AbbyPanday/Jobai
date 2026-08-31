@@ -1,0 +1,46 @@
+{
+  "prompt_name": "Multimodal ATS Resume Extraction Engine",
+  "target_model": "gemini-2.5-flash",
+  "temperature": 0.1,
+  "system_instructions": "You are a world-class ATS (Applicant Tracking System) parser and talent intelligence specialist tuned specifically for the Indian Tech Ecosystem.\nYour task is to extract structured candidate details with high precision from the provided resume text or uploaded document.\nNormalize skill names (e.g. 'Fast API' -> 'FastAPI', 'K8s' -> 'Kubernetes', 'GCP / Google Cloud' -> 'GCP').\nExtract accurate years of experience, current location, current designation, and education details.",
+  "response_mime_type": "application/json",
+  "response_schema": {
+    "type": "OBJECT",
+    "properties": {
+      "full_name": { "type": "STRING", "description": "Candidate full name" },
+      "email": { "type": "STRING", "description": "Contact email address" },
+      "phone": { "type": "STRING", "description": "Phone number with country code" },
+      "current_location": { "type": "STRING", "description": "City and State (e.g., Bengaluru, Karnataka)" },
+      "current_designation": { "type": "STRING", "description": "Most recent job title" },
+      "years_of_experience": { "type": "NUMBER", "description": "Total professional software engineering experience in years" },
+      "primary_skills": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" },
+        "description": "Core technical languages, frameworks, and backend technologies"
+      },
+      "secondary_skills": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" },
+        "description": "Databases, tools, testing, frontend or supporting technologies"
+      },
+      "cloud_and_infrastructure": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" },
+        "description": "Cloud platforms (GCP, AWS, Azure), Docker, Kubernetes, CI/CD"
+      },
+      "summary": { "type": "STRING", "description": "2-3 sentence executive professional summary" },
+      "past_companies": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" },
+        "description": "Names of past and current employer organizations"
+      },
+      "education": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" },
+        "description": "Degrees, institutions, and graduation years"
+      }
+    },
+    "required": ["full_name", "email", "primary_skills", "years_of_experience"]
+  },
+  "sample_user_input": "Parse this Indian tech candidate resume:\n\nAbhinav Sharma\nBengaluru, India | abhinav.dev@gmail.com | +91 98765 43210 | linkedin.com/in/abhinavsharma-dev\n\nPROFESSIONAL SUMMARY\nSenior Backend Engineer with 5.5 years of experience building high-throughput microservices in Go, Python (FastAPI), and Distributed Systems. Experience at high-growth Indian fintech unicorn processing 20M+ daily transactions on GCP.\n\nEXPERIENCE\nSenior Software Engineer — Razorpay, Bengaluru (June 2022 – Present)\n- Architected idempotency and webhook delivery engine in Go & Redis handling 15,000 RPS at p99 < 25ms.\n- Migrated monolith payment ledger to event-driven Kafka microservices on Google Kubernetes Engine (GKE).\n\nSoftware Engineer — Swiggy, Bengaluru (July 2019 – May 2022)\n- Designed real-time delivery rider dispatching service in Python FastAPI, PostgreSQL, and Redis.\n\nSKILLS\nLanguages: Go (Golang), Python, SQL\nFrameworks: FastAPI, Gin, gRPC\nCloud & DevOps: GCP, Kubernetes, Docker, Terraform, Kafka\nDatabases: PostgreSQL, Redis, MongoDB\n\nEDUCATION\nB.Tech in Computer Science — BITS Pilani (2015 – 2019)"
+}
