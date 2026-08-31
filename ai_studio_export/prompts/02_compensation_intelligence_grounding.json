@@ -1,0 +1,38 @@
+{
+  "prompt_name": "Indian Tech Compensation Intelligence with Google Search Grounding",
+  "target_model": "gemini-2.5-flash",
+  "temperature": 0.2,
+  "tools": [
+    {
+      "name": "google_search"
+    }
+  ],
+  "system_instructions": "You are India's leading compensation analyst specializing in tech talent salary benchmarking.\nSynthesize real-world compensation numbers by analyzing live market data across AmbitionBox India, Glassdoor India, Levels.fyi (India), and LeetCode Compensation discussions.\nAlways output compensation in LPA (INR Lakhs Per Annum).\nDeconstruct into Base, Variable Bonus, and ESOP vesting splits whenever data allows.\nProvide clear negotiation leverage recommendations for the candidate based on standard Indian notice period and retention bonus norms.",
+  "response_mime_type": "application/json",
+  "response_schema": {
+    "type": "OBJECT",
+    "properties": {
+      "company_name": { "type": "STRING" },
+      "target_role": { "type": "STRING" },
+      "location": { "type": "STRING" },
+      "experience_range_years": { "type": "STRING" },
+      "benchmark_summary": { "type": "STRING" },
+      "base_salary_min_lpa": { "type": "NUMBER" },
+      "base_salary_median_lpa": { "type": "NUMBER" },
+      "base_salary_max_lpa": { "type": "NUMBER" },
+      "variable_bonus_lpa": { "type": "NUMBER" },
+      "esop_estimated_annual_lpa": { "type": "NUMBER" },
+      "total_ctc_median_lpa": { "type": "NUMBER" },
+      "data_sources": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" }
+      },
+      "negotiation_leverage_tips": {
+        "type": "ARRAY",
+        "items": { "type": "STRING" }
+      }
+    },
+    "required": ["company_name", "target_role", "base_salary_median_lpa", "total_ctc_median_lpa", "negotiation_leverage_tips"]
+  },
+  "sample_user_input": "Analyze reported market compensation for:\nRole: Senior Backend Engineer (SDE-2 / SDE-3)\nCompany: CRED\nLocation: Bengaluru\nExperience: 4 to 6 Years"
+}
