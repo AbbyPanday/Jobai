@@ -1,0 +1,29 @@
+[
+  {
+    "job_id": "job_01",
+    "company": "Razorpay",
+    "title": "Senior Backend Engineer - Core Payments",
+    "location": "Bengaluru, Karnataka (Hybrid)",
+    "experience_required": "4-7 Years",
+    "ctc_budget_lpa": "35 - 50 LPA",
+    "description": "Razorpay is looking for Senior Software Engineers to build next-generation payment infrastructure. You will design, build and operate distributed payment ledger services handling billions of dollars in volume.\n\nRequirements:\n- 4+ years of deep hands-on experience in Golang, Java, or Python.\n- Strong expertise in relational databases (PostgreSQL, MySQL) and caching (Redis).\n- Experience with high throughput event-driven architectures (Kafka, RabbitMQ).\n- Hands-on experience deploying and troubleshooting microservices on Kubernetes and GCP/AWS.\n- Deep understanding of distributed transactions, idempotency patterns, and p99 latency optimization."
+  },
+  {
+    "job_id": "job_02",
+    "company": "Swiggy",
+    "title": "Lead Software Development Engineer - Delivery Logistics",
+    "location": "Bengaluru, Karnataka",
+    "experience_required": "6-9 Years",
+    "ctc_budget_lpa": "55 - 75 LPA",
+    "description": "Join Swiggy Logistics Platform engineering team. You will lead the architecture of real-time matching algorithms connecting millions of customers with delivery partners in sub-second latency.\n\nRequirements:\n- 6+ years in backend engineering building large-scale distributed systems in Go or Java.\n- Strong expertise in distributed caching, geospatial indexing (H3, S2 geometry), and streaming data.\n- Experience leading architectural decisions and mentoring junior/mid-level engineers."
+  },
+  {
+    "job_id": "job_03",
+    "company": "CRED",
+    "title": "Product Engineer - Frontend (Web & Mobile Web)",
+    "location": "Bengaluru, Karnataka",
+    "experience_required": "3-5 Years",
+    "ctc_budget_lpa": "30 - 45 LPA",
+    "description": "CRED is looking for exceptional Product Engineers to build high-polish, buttery smooth user experiences. You will obsess over millisecond animations, web vitals, and frontend architecture.\n\nRequirements:\n- 3+ years experience with modern React, TypeScript, Next.js, and CSS animations.\n- Deep knowledge of browser rendering pipelines, Web Vitals optimization, and state management.\n- High aesthetic standard and eye for UI micro-interactions."
+  }
+]
